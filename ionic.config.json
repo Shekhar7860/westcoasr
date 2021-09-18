@@ -1,0 +1,7 @@
+{
+  "name": "westcoast",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

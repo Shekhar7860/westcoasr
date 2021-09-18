@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title style="margin: 0px 0px;">Department</ion-title>
+        <ion-buttons slot="start" (click)="back_exit()">
+            <ion-icon [name]="'chevron-back-outline'" style="font-size: 24px;padding: 5px;"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar style="background-color: #F0F4F7;height: 50px;">
+        <ion-searchbar style="padding: 5px;" color="light" debounce="500" autocorrect="true" spellcheck="true"
+                       (ionInput)="initializeItems($event)" [placeholder]="'Search here'"
+                       animated></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-card style="margin: 0px;" *ngFor="let i of searchList let idx = index" (click)="selectname(i)">
+            <ion-item [lines]="'none'">
+                <ion-badge slot="start" [ngStyle]="{'background-color': '#53ABDB'}"
+                           style="padding: 10px;height: 40px;width: 40px;border-radius: 50px;margin: 5px;font-size: 18px;text-transform: capitalize;">
+                    {{i.ID}}
+                </ion-badge>
+                <div style="margin: 5px;">
+                    <ion-label style="margin: 5px;color: #1e2023;white-space: normal">{{i.NAME}}</ion-label>
+                </div>
+            </ion-item>
+        </ion-card>
+    </ion-list>
+
+</ion-content>

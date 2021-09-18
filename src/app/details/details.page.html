@@ -1,0 +1,292 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title style="margin: 0px 0px;">Details</ion-title>
+        <ion-buttons slot="start" (click)="back_exit()">
+            <ion-icon [name]="'chevron-back-outline'" style="font-size: 24px;padding: 5px;"></ion-icon>
+        </ion-buttons>
+
+        <ion-buttons slot="end" (click)="Edit_Data()" *ngIf="IS_EDIT == true">
+            <p style="margin: 10px;">EDIT</p>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <p style="margin: 16px;font-weight: bold">Production Details</p>
+    <div *ngFor="let i of DATA">
+        <ion-row *ngIf="i.DATE">
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Date</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.DATE}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.LOCATION">
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Location</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.LOCATION}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.DEPARTMENT_NAME">
+
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Department</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.DEPARTMENT_NAME}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.SUB_DEPARTMENT_NAME">
+
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Sub Department</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.SUB_DEPARTMENT_NAME}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.ROOM_NAME">
+
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Room No</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.ROOM_NAME}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.PRODUCTION_CHEMIST_NAME">
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Production Chemist Name</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.PRODUCTION_CHEMIST_NAME}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.QA_CHEMIST_NAME">
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Q.A. Chemist Name</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.QA_CHEMIST_NAME}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.MACHINE_NAME">
+
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Machine Name</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.MACHINE_NAME}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.MACHINE_START_TIME">
+
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Machine Start Time</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.MACHINE_START_TIME}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.PRODUCT_NAME">
+
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Product Name</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.PRODUCT_NAME}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.B_NO">
+
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">B.No.</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.B_NO}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.COMPLETE_TIME_CLOSE_TIME">
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Complete time/close time</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.COMPLETE_TIME_CLOSE_TIME}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.REMARK">
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Remark</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.REMARK}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.STATUS">
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Status</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.STATUS_NAME}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.OPERATOR_NAME">
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Operator Name</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.OPERATOR_NAME}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="i.NO_OF_KG">
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">No.of kg</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.NO_OF_KG}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="i.NO_OF_TABLE_IN_BATCH">
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">No of Tablets In batch</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.NO_OF_TABLE_IN_BATCH}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="i.RPM_MACHINE">
+
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">RPM Machine</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.RPM_MACHINE}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="i.UNIT_NAME">
+
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Unit</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.UNIT_NAME}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="i.TIME_NAME">
+
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Time</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.TIME_NAME}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="i.NO_OF_LITER">
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">No of Liter</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.NO_OF_LITER}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="i.NO_OF_BOTTLES_READY">
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">No of Bottles Ready</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.NO_OF_BOTTLES_READY}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="i.NO_OF_BOX_LABELS">
+
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">No of Box/Labels</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.NO_OF_BOX_LABELS}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="i.NO_OF_QTY_COMPLETED">
+
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">No of Completed QTY</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.NO_OF_QTY_COMPLETED}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <div class="shop_imga_plus" *ngIf="i.IMAGE.length > 0">
+            <ion-row>
+                <ion-col [size]="12">
+                    <p style="margin: 0px 10px;font-weight: bold">Images</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col [size]="4" align="center" *ngFor="let i of i.IMAGE">
+                    <img [src]="i.image || 'https://nccastaff.bournemouth.ac.uk/jmacey/GraphicsLib/Demos/BlankNGL.png'" (click)="ZOOM_IMAGE(i.image)"
+                         style="width: auto;height: 70px;padding: 5px;">
+                </ion-col>
+            </ion-row>
+        </div>
+        <div class="shop_imga_plus" *ngIf="i.IMAGE_OF_RPM.length > 0">
+            <ion-row>
+                <ion-col [size]="12">
+                    <p style="margin: 0px 10px;font-weight: bold">Image of RPM</p>
+                </ion-col>
+            </ion-row>
+            <ion-row >
+                <ion-col [size]="4" align="center" *ngFor="let i of i.IMAGE_OF_RPM">
+                    <img [src]="i.image || 'https://nccastaff.bournemouth.ac.uk/jmacey/GraphicsLib/Demos/BlankNGL.png'" (click)="ZOOM_IMAGE(i.image)"
+                         style="width: auto;height: 70px;padding: 5px;">
+                </ion-col>
+            </ion-row>
+        </div>
+        <div class="shop_imga_plus" *ngIf="i.CR_IMAGE.length > 0">
+            <ion-row >
+                <ion-col [size]="12">
+                    <p style="margin: 0px 10px;font-weight: bold">C.R.box inside image</p>
+                </ion-col>
+            </ion-row>
+            <ion-row >
+                <ion-col [size]="4" align="center" *ngFor="let i of i.CR_IMAGE">
+                    <img [src]="i.image || 'https://nccastaff.bournemouth.ac.uk/jmacey/GraphicsLib/Demos/BlankNGL.png'" (click)="ZOOM_IMAGE(i.image)"
+                         style="width: auto;height: 70px;padding: 5px;">
+                </ion-col>
+            </ion-row>
+        </div>
+        <div class="shop_imga_plus" *ngIf="i.CR_READY_IMAGE.length > 0">
+            <ion-row >
+                <ion-col [size]="12">
+                    <p style="margin: 0px 10px;font-weight: bold">Ready C.R Box images</p>
+                </ion-col>
+            </ion-row>
+            <ion-row >
+                <ion-col [size]="4" align="center" *ngFor="let i of i.CR_READY_IMAGE">
+                    <img [src]="i.image || 'https://nccastaff.bournemouth.ac.uk/jmacey/GraphicsLib/Demos/BlankNGL.png'" (click)="ZOOM_IMAGE(i.image)"
+                         style="width: auto;height: 70px;padding: 5px;">
+                </ion-col>
+            </ion-row>
+        </div>
+        <ion-row *ngIf="i.CR_BOX_QTY">
+
+            <ion-col size="12" style="margin: 0px 15px;">
+                <div>
+                    <ion-label style="color: grey;font-size: 14px;">Ready CR Box Qty</ion-label>
+                    <p style="color: black;font-size: 16px;margin: 5px auto">{{i.CR_BOX_QTY}}</p>
+                </div>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>

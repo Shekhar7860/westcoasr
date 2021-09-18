@@ -1,0 +1,113 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title style="margin: 0px 0px;">{{api.SEARCH_TITLE}}</ion-title>
+        <ion-buttons slot="end" (click)="back_exit()">
+            <ion-icon [name]="'close'" style="font-size: 24px;"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar style="background-color: #F0F4F7;height: 50px;">
+        <ion-searchbar style="padding: 5px;" color="light" debounce="500" autocorrect="true" spellcheck="true"
+                       (ionInput)="initializeItems($event)" [placeholder]="'Search here'"
+                       animated></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngIf="api.SEARCH_TYPE != 3 && api.SEARCH_TYPE != 4 && api.SEARCH_TYPE != 6">
+        <ion-card style="margin: 0px;" *ngFor="let i of searchList let idx = index" (click)="selectname(i)">
+            <ion-item [lines]="'none'">
+                <ion-badge slot="start" [ngStyle]="{'background-color': '#53ABDB'}"
+                           style="padding: 10px;height: 40px;width: 40px;border-radius: 50px;margin: 5px;font-size: 18px;text-transform: capitalize;">
+                    {{idx+1}}
+                </ion-badge>
+                <div style="margin: 5px;">
+                    <ion-label style="margin: 5px;color: #1e2023;white-space: normal;">{{i.NAME}}</ion-label>
+                </div>
+            </ion-item>
+        </ion-card>
+    </ion-list>
+
+    <ion-list *ngIf="api.SEARCH_TYPE == 3 || api.SEARCH_TYPE == 4 || api.SEARCH_TYPE == 6">
+        <ion-card style="margin: 0px;" *ngFor="let i of searchList let idx = index">
+            <ion-item [lines]="'none'">
+                <ion-badge slot="start" [ngStyle]="{'background-color': '#53ABDB'}"
+                           style="padding: 10px;height: 40px;width: 40px;border-radius: 50px;margin: 5px;font-size: 18px;text-transform: capitalize;">
+                    {{idx+1}}
+                </ion-badge>
+                <div style="margin: 5px;">
+                    <ion-label style="margin: 5px;color: #1e2023;white-space: normal;">{{i.NAME}}</ion-label>
+                </div>
+                <ion-checkbox slot="end" [(ngModel)]="i.selected"></ion-checkbox>
+            </ion-item>
+        </ion-card>
+    </ion-list>
+    <!--  <ion-list *ngIf="api.SEARCH_TYPE == 2">
+          <ion-card style="margin: 0px;" *ngFor="let i of [1,2,3,4,5] let idx = index" (click)="selectname(i)">
+              <ion-item [lines]="'none'">
+                  <ion-badge slot="start" [ngStyle]="{'background-color': '#53ABDB'}"
+                             style="padding: 10px;height: 40px;width: 40px;border-radius: 50px;margin: 5px;font-size: 18px;text-transform: capitalize;">
+                      {{'1'}}
+                  </ion-badge>
+                  <div style="margin: 5px;">
+                      <ion-label style="margin: 5px;color: #1e2023">{{api.SEARCH_TITLE}}</ion-label>
+                  </div>
+              </ion-item>
+          </ion-card>
+      </ion-list>
+      <ion-list *ngIf="api.SEARCH_TYPE == 3">
+          <ion-card style="margin: 0px;" *ngFor="let i of [1,2,3,4,5] let idx = index" (click)="selectname(i)">
+              <ion-item [lines]="'none'">
+                  <ion-badge slot="start" [ngStyle]="{'background-color': '#53ABDB'}"
+                             style="padding: 10px;height: 40px;width: 40px;border-radius: 50px;margin: 5px;font-size: 18px;text-transform: capitalize;">
+                      {{'1'}}
+                  </ion-badge>
+                  <div style="margin: 5px;">
+                      <ion-label style="margin: 5px;color: #1e2023">{{api.SEARCH_TITLE}}</ion-label>
+                  </div>
+              </ion-item>
+          </ion-card>
+      </ion-list>
+      <ion-list *ngIf="api.SEARCH_TYPE == 4">
+          <ion-card style="margin: 0px;" *ngFor="let i of [1,2,3,4,5] let idx = index" (click)="selectname(i)">
+              <ion-item [lines]="'none'">
+                  <ion-badge slot="start" [ngStyle]="{'background-color': '#53ABDB'}"
+                             style="padding: 10px;height: 40px;width: 40px;border-radius: 50px;margin: 5px;font-size: 18px;text-transform: capitalize;">
+                      {{'1'}}
+                  </ion-badge>
+                  <div style="margin: 5px;">
+                      <ion-label style="margin: 5px;color: #1e2023">{{api.SEARCH_TITLE}}</ion-label>
+                  </div>
+              </ion-item>
+          </ion-card>
+      </ion-list>
+      <ion-list *ngIf="api.SEARCH_TYPE == 5">
+          <ion-card style="margin: 0px;" *ngFor="let i of [1,2,3,4,5] let idx = index" (click)="selectname(i)">
+              <ion-item [lines]="'none'">
+                  <ion-badge slot="start" [ngStyle]="{'background-color': '#53ABDB'}"
+                             style="padding: 10px;height: 40px;width: 40px;border-radius: 50px;margin: 5px;font-size: 18px;text-transform: capitalize;">
+                      {{'1'}}
+                  </ion-badge>
+                  <div style="margin: 5px;">
+                      <ion-label style="margin: 5px;color: #1e2023">{{'DEMO'}}</ion-label>
+                  </div>
+              </ion-item>
+          </ion-card>
+      </ion-list>
+      <ion-list *ngIf="api.SEARCH_TYPE == 6">
+          <ion-card style="margin: 0px;" *ngFor="let i of [1,2,3,4,5] let idx = index" (click)="selectname(i)">
+              <ion-item [lines]="'none'">
+                  <ion-badge slot="start" [ngStyle]="{'background-color': '#53ABDB'}"
+                             style="padding: 10px;height: 40px;width: 40px;border-radius: 50px;margin: 5px;font-size: 18px;text-transform: capitalize;">
+                      {{'1'}}
+                  </ion-badge>
+                  <div style="margin: 5px;">
+                      <ion-label style="margin: 5px;color: #1e2023">{{'DEMO'}}</ion-label>
+                  </div>
+              </ion-item>
+          </ion-card>
+      </ion-list>
+  -->
+</ion-content>
+<ion-footer *ngIf="api.SEARCH_TYPE == 3 || api.SEARCH_TYPE == 4 || api.SEARCH_TYPE == 6">
+    <ion-button [size]="'full'" style="margin: 0px;" (click)="selectname()">Continue</ion-button>
+</ion-footer>

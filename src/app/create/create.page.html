@@ -1,0 +1,418 @@
+<ion-header>
+    <ion-toolbar [color]="'primary'">
+        <ion-buttons slot="start" (click)="back_exit()">
+            <ion-icon [name]="'chevron-back-outline'" style="font-size: 24px;padding: 5px;"></ion-icon>
+        </ion-buttons>
+        <ion-title>{{TITLE}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <ion-item class="email_lable" lines="none">
+            <ion-label position="floating" class="primary email" #name>Date <span style="color: red">*</span>
+            </ion-label>
+            <ion-datetime [mode]="'ios'" class="primary" displayFormat="DD-MM-YYYY" pickerFormat="DD-MM-YYYY"
+                          [(ngModel)]="DATE"
+                          style="font-size: 16px;" [disabled]="true"></ion-datetime>
+        </ion-item>
+        <hr>
+    </div>
+    <div class="login_content">
+        <div class="biiling_adddress_box" style="margin: 0px;padding: 0px;">
+            <ion-row style="margin: 0px 10px">
+                <ion-col size="10" (click)="oepn_search(1,'Sub Department')">
+                    <div>
+                        <p style="font-size: 14px;padding: 10px 0px 0px 0px;">Sub Department<span
+                                style="color: red">*</span></p>
+                        <p style="font-size: 16px;padding: 5px 0px;line-height: normal;">
+                            {{api.SUB_DEPARTMENT_NAME}}</p>
+                    </div>
+                </ion-col>
+                <ion-col size="2" align="end">
+                    <ion-icon name="chevron-forward-outline"
+                              style="font-size: 20px;color: #5d58e0;margin: 15px;"></ion-icon>
+                </ion-col>
+            </ion-row>
+            <hr>
+        </div>
+        <div class="login_content">
+            <div class="biiling_adddress_box" style="margin: 0px;padding: 0px;">
+                <ion-row style="margin: 0px 10px">
+                    <ion-col size="10" (click)="oepn_search(2,'Room No')">
+                        <div>
+                            <p style="font-size: 14px;padding: 10px 0px 0px 0px;">Room No<span
+                                    style="color: red">*</span></p>
+                            <p style="font-size: 16px;padding: 5px 0px;line-height: normal;">
+                                {{api.ROOM_NAME}}</p>
+                        </div>
+                    </ion-col>
+                    <ion-col size="2" align="end">
+                        <ion-icon name="chevron-forward-outline"
+                                  style="font-size: 20px;color: #5d58e0;margin: 15px;"></ion-icon>
+                    </ion-col>
+                </ion-row>
+                <hr>
+            </div>
+        </div>
+        <div class="login_content">
+            <div class="biiling_adddress_box" style="margin: 0px;padding: 0px;">
+                <ion-row style="margin: 0px 10px">
+                    <ion-col size="10" (click)="oepn_search(3,'Production Chemist Name')">
+                        <div>
+                            <p style="font-size: 14px;padding: 10px 0px 0px 0px;">Production Chemist Name<span
+                                    style="color: red">*</span></p>
+                            <p style="font-size: 16px;padding: 5px 0px;line-height: normal;">
+                                {{api.PRODUCATION_NAME}}</p>
+                        </div>
+                    </ion-col>
+                    <ion-col size="2" align="end">
+                        <ion-icon name="chevron-forward-outline"
+                                  style="font-size: 20px;color: #5d58e0;margin: 15px;"></ion-icon>
+                    </ion-col>
+                </ion-row>
+                <hr>
+            </div>
+        </div>
+        <div class="login_content">
+            <div class="biiling_adddress_box" style="margin: 0px;padding: 0px;">
+                <ion-row style="margin: 0px 10px">
+                    <ion-col size="10" (click)="oepn_search(4,'Q.A. Chemist Name')">
+                        <div>
+                            <p style="font-size: 14px;padding: 10px 0px 0px 0px;">Q.A. Chemist Name<span
+                                    style="color: red">*</span></p>
+                            <p style="font-size: 16px;padding: 5px 0px;line-height: normal;">
+                                {{api.QA_NAME}}</p>
+                        </div>
+                    </ion-col>
+                    <ion-col size="2" align="end">
+                        <ion-icon name="chevron-forward-outline"
+                                  style="font-size: 20px;color: #5d58e0;margin: 15px;"></ion-icon>
+                    </ion-col>
+                </ion-row>
+                <hr>
+            </div>
+        </div>
+
+        <div class="login_content">
+            <div class="biiling_adddress_box" style="margin: 0px;padding: 0px;">
+                <ion-row style="margin: 0px 10px">
+                    <ion-col size="10" (click)="oepn_search(5,'Machine Name')">
+                        <div>
+                            <p style="font-size: 14px;padding: 10px 0px 0px 0px;">Machine Name<span
+                                    style="color: red">*</span></p>
+                            <p style="font-size: 16px;padding: 5px 0px;line-height: normal;">
+                                {{api.MACHINE_NAME}}</p>
+                        </div>
+                    </ion-col>
+                    <ion-col size="2" align="end">
+                        <ion-icon name="chevron-forward-outline"
+                                  style="font-size: 20px;color: #5d58e0;margin: 15px;"></ion-icon>
+                    </ion-col>
+                </ion-row>
+                <hr>
+            </div>
+        </div>
+        <div>
+            <ion-item class="email_lable" lines="none">
+                <ion-label position="floating" class="primary email" #name>Machine Start Time<span
+                        style="color: red">*</span></ion-label>
+                <ion-datetime [mode]="'ios'" class="primary" displayFormat="DD-MM-YYYY h:mm a"
+                              pickerFormat="DD-MM-YYYY h:mm a"
+                              [(ngModel)]="MACHINE_START_TIME"
+                              style="font-size: 16px;"></ion-datetime>
+            </ion-item>
+            <hr>
+        </div>
+
+        <div>
+            <ion-item class="email_lable" lines="none">
+                <ion-label position="floating" class="primary email" #name>Product Name<span style="color: red">*</span>
+                </ion-label>
+                <ion-input class="primary" style="font-size: 16px;" [(ngModel)]="PRODUCT_NAME"></ion-input>
+            </ion-item>
+            <hr>
+        </div>
+        <div>
+            <ion-item class="email_lable" lines="none">
+                <ion-label position="floating" class="primary email" #name>B.No.<span style="color: red">*</span>
+                </ion-label>
+                <ion-input class="primary" style="font-size: 16px;" [(ngModel)]="B_NO"></ion-input>
+            </ion-item>
+            <hr>
+        </div>
+
+        <!-- <div>
+            <ion-item class="email_lable" lines="none">
+                <ion-label position="floating" class="primary email" #name>Complete time/close time<span
+                        style="color: red">*</span></ion-label>
+                <ion-datetime [mode]="'ios'" class="primary" displayFormat="DD-MM-YYYY h:mm a"
+                              pickerFormat="DD-MM-YYYY h:mm a"
+                              [(ngModel)]="CLOSE_TIME"
+                              style="font-size: 16px;"></ion-datetime>
+            </ion-item>
+            <hr>
+        </div> -->
+        <div>
+            <ion-item class="email_lable" lines="none">
+                <ion-label position="floating" class="primary email" #name>Remarks</ion-label>
+                <ion-textarea class="primary" style="font-size: 16px;" [(ngModel)]="REMARK"></ion-textarea>
+            </ion-item>
+            <hr>
+        </div>
+
+
+        <div class="login_content">
+            <div class="biiling_adddress_box" style="margin: 0px;padding: 0px;">
+                <ion-row style="margin: 0px 10px">
+                    <ion-col size="12">
+                        <div>
+                            <p style="font-size: 14px;padding: 10px 0px 0px 0px;">Status<span
+                                    style="color: red">*</span></p>
+
+                            <ion-row>
+                                <ion-col [size]="6">
+                                    <ion-card style="text-align: center;margin: 10px;height: 100%;"
+                                              [ngClass]="STATUS == 1?'active_pending':''" (click)="STATUS =1">
+                                        <ion-icon name="alarm-outline"
+                                                  style="font-size: 50px;margin-top: 5px;"></ion-icon>
+                                        <p style="text-align: center">Pending</p>
+                                    </ion-card>
+                                </ion-col>
+                                <ion-col [size]="6">
+                                    <ion-card style="text-align: center;margin: 10px;height: 100%;"
+                                              [ngClass]="STATUS == 2?'active_complate':''" (click)="STATUS =2">
+                                        <ion-icon name="checkmark-circle-outline"
+                                                  style="font-size: 50px;margin-top: 5px;"></ion-icon>
+                                        <p style="text-align: center">Complete</p>
+                                    </ion-card>
+                                </ion-col>
+                            </ion-row>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <hr style="margin: 15px 0px">
+            </div>
+        </div>
+        <div class="login_content">
+            <div class="biiling_adddress_box" style="margin: 0px;padding: 0px;">
+                <ion-row style="margin: 0px 10px">
+                    <ion-col size="10" (click)="oepn_search(6,'Operator Name')">
+                        <div>
+                            <p style="font-size: 14px;padding: 10px 0px 0px 0px;">Operator Name<span
+                                    style="color: red">*</span>
+                            </p>
+                            <p style="font-size: 16px;padding: 5px 0px;line-height: normal;">
+                                {{api.OPERATER_NAME}}</p>
+                        </div>
+                    </ion-col>
+                    <ion-col size="2" align="end">
+                        <ion-icon name="chevron-forward-outline"
+                                  style="font-size: 20px;color: #5d58e0;margin: 15px;"></ion-icon>
+                    </ion-col>
+                </ion-row>
+                <hr>
+            </div>
+        </div>
+        <div *ngIf="ID == '1' || ID == '2'|| ID == '3'|| ID == '4'|| ID == '5' || ID == '16' || ID == '17' || ID == '18' || ID == '19' || ID == '20' || ID == '21' || ID == '22' || ID == '23' || ID == '24' || ID == '25' || ID == '26' || ID == '27' || ID == '28' || ID == '30' || ID == '31' || ID == '34' || ID == '35' || ID == '36' || ID == '37'">
+            <ion-item class="email_lable" lines="none">
+                <ion-label position="floating" class="primary email" #name>No.of kg<span style="color: red">*</span>
+                </ion-label>
+                <ion-input type="number" class="primary" style="font-size: 16px;" [(ngModel)]="NO_OF_KG"></ion-input>
+            </ion-item>
+            <hr>
+        </div>
+        <div *ngIf="ID == '3' || ID == '4' || ID == '5' || ID == '18' || ID == '19' || ID == '20' || ID == '24' || ID == '25' || ID == '26' || ID == '27' || ID == '28'  || ID == '31' || ID == '35' || ID == '36' || ID == '37'">
+            <ion-item class="email_lable" lines="none">
+                <ion-label position="floating" class="primary email" #name>Batch Size<span
+                        style="color: red">*</span></ion-label>
+                <ion-input type="number" class="primary" style="font-size: 16px;"
+                           [(ngModel)]="NO_OF_TABLE_IN_BATCH"></ion-input>
+            </ion-item>
+            <hr>
+        </div>
+        <div *ngIf="ID == '4' || ID == '5' || ID == '6' || ID == '7' || ID == '8' || ID == '9' || ID == '10' || ID == '11' || ID == '12' || ID == '13' || ID == '14' || ID == '15' || ID == '19' || ID == '20' || ID == '24' || ID == '25' || ID == '26'  || ID == '31' || ID == '32' || ID == '33' || ID == '36' || ID == '37'">
+            <ion-item class="email_lable" lines="none">
+                <ion-label position="floating" class="primary email" #name>RPM Machine<span style="color: red">*</span></ion-label>
+                <ion-input type="number" class="primary" style="font-size: 16px;" [(ngModel)]="RPM_MACHINE"></ion-input>
+            </ion-item>
+            <hr>
+        </div>
+        <div class="biiling_adddress_box" style="margin: 0px;padding: 0px;"
+             *ngIf="ID == '4' || ID == '5' || ID == '6' || ID == '7' || ID == '8' || ID == '9' || ID == '10' || ID == '11' || ID == '12' || ID == '13' || ID == '14' || ID == '15' || ID == '19' || ID == '20' || ID == '24' || ID == '25' || ID == '26'  || ID == '31' || ID == '32' || ID == '33' || ID == '36' || ID == '37'">
+            <ion-row style="margin: 0px 10px">
+                <ion-col size="10" (click)="oepn_search(7,'Operator Name')">
+                    <div>
+                        <p style="font-size: 14px;padding: 10px 0px 0px 0px;">Unit</p>
+                        <p style="font-size: 16px;padding: 5px 0px;line-height: normal;">
+                            {{api.UNIT_NAME}}</p>
+                    </div>
+                </ion-col>
+                <ion-col size="2" align="end">
+                    <ion-icon name="chevron-forward-outline"
+                              style="font-size: 20px;color: #5d58e0;margin: 15px;"></ion-icon>
+                </ion-col>
+            </ion-row>
+            <hr>
+        </div>
+        <div class="biiling_adddress_box" style="margin: 0px;padding: 0px;"
+             *ngIf="ID == '4' || ID == '5' || ID == '6' || ID == '7' || ID == '8' || ID == '9' || ID == '10' || ID == '11' || ID == '12' || ID == '13' || ID == '14' || ID == '15' || ID == '19' || ID == '20' || ID == '24' || ID == '25' || ID == '26'  || ID == '31'  || ID == '32' || ID == '33' || ID == '36' || ID == '37'">
+            <ion-row style="margin: 0px 10px">
+                <ion-col size="10" (click)="oepn_search(8,'Operator Name')">
+                    <div>
+                        <p style="font-size: 14px;padding: 10px 0px 0px 0px;">Time</p>
+                        <p style="font-size: 16px;padding: 5px 0px;line-height: normal;">
+                            {{api.TIME_NAME}}</p>
+                    </div>
+                </ion-col>
+                <ion-col size="2" align="end">
+                    <ion-icon name="chevron-forward-outline"
+                              style="font-size: 20px;color: #5d58e0;margin: 15px;"></ion-icon>
+                </ion-col>
+            </ion-row>
+            <hr>
+        </div>
+        <div *ngIf="ID == '6' || ID == '7' || ID == '8'|| ID == '9' || ID == '10' || ID == '11' || ID == '12' || ID == '13' || ID == '14' || ID == '15' || ID == '32' || ID == '33'">
+            <ion-item class="email_lable" lines="none">
+                <ion-label position="floating" class="primary email" #name>No of Liter<span style="color: red">*</span>
+                </ion-label>
+                <ion-input type="number" class="primary" style="font-size: 16px;" [(ngModel)]="NO_OF_LITER"></ion-input>
+            </ion-item>
+            <hr>
+        </div>
+        <!-- <div *ngIf="ID == '7' || ID == '9' || ID == '11' || ID == '15' || ID == '33'">
+            <ion-item class="email_lable" lines="none">
+                <ion-label position="floating" class="primary email" #name>No of Bottles Ready<span
+                        style="color: red">*</span></ion-label>
+                <ion-input type="number" class="primary" style="font-size: 16px;"
+                           [(ngModel)]="NO_OF_BOTTLES_READY"></ion-input>
+            </ion-item>
+            <hr>
+        </div> -->
+        <div *ngIf="ID == '29'">
+            <ion-item class="email_lable" lines="none">
+                <ion-label position="floating" class="primary email" #name>No of Box/Labels<span
+                        style="color: red">*</span></ion-label>
+                <ion-input type="number" class="primary" style="font-size: 16px;"
+                           [(ngModel)]="NO_OF_BOX_LABELS"></ion-input>
+            </ion-item>
+            <hr>
+        </div>
+         <!-- <div>
+            <ion-item class="email_lable" lines="none">
+                <ion-label position="floating" class="primary email" #name>No of Completed QTY<span
+                        style="color: red">*</span></ion-label>
+                <ion-input type="number" class="primary" style="font-size: 16px;"
+                           [(ngModel)]="NO_OF_QTY_COMPLETED"></ion-input>
+            </ion-item>
+            <hr>
+        </div> -->
+        <div>
+            <ion-item class="email_lable" lines="none">
+                <ion-label position="floating" class="primary email" #name>No. of workers<span
+                        style="color: red">*</span></ion-label>
+                <ion-input type="number" class="primary" style="font-size: 16px;" [(ngModel)]="NO_OF_WORKERS"
+                           type="number"></ion-input>
+            </ion-item>
+            <hr>
+        </div>
+        <div class="biiling_adddress_box" style="margin: 0px;padding: 0px;">
+            <ion-row style="margin: 0px 10px">
+                <ion-col size="10">
+                    <div>
+                        <p style="font-size: 16px;padding: 10px 0px;line-height: normal;">
+                            {{'Image'}}<span style="color: red">*</span></p>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <div class="shop_imga_plus">
+                <ion-row>
+                    <ion-col [size]="3" style="text-align: center" *ngFor="let i of IMAGES let idx =index">
+                        <ion-icon name="close" (click)="removeimage(idx,1)"
+                                  style="position: absolute;color: white;background-color: gray;border-radius: 50%;padding: 3px;font-size: 10px;height: 15px;width: 15px;top: 0px;"></ion-icon>
+                        <img [src]="i.image" style="width: 50px;height: 70px;">
+                    </ion-col>
+                    <ion-col [size]="3" style="text-align: center;margin: auto 0px;">
+                        <img src="/assets/plus.png" style="width: 30px;" (click)="presentActionSheet(1)">
+                    </ion-col>
+                </ion-row>
+            </div>
+            <hr style="background-color: lightgray">
+        </div>
+        <div class="biiling_adddress_box" style="margin: 0px;padding: 0px;"
+             *ngIf="ID == '5'|| ID == '6' || ID == '7' || ID == '8' || ID == '9' || ID == '10' || ID == '11' || ID == '12' || ID == '13' || ID == '14' || ID == '15' || ID == '20' || ID == '25' || ID == '26' || ID == '31' || ID == '32'  || ID == '33' || ID == '37'">
+            <ion-row style="margin: 0px 10px">
+                <ion-col size="10">
+                    <div>
+                        <p style="font-size: 16px;padding: 10px 0px;line-height: normal;">
+                            {{'Image of RPM'}}<span style="color: red">*</span></p>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <div class="shop_imga_plus">
+                <ion-row>
+                    <ion-col [size]="3" style="text-align: center" *ngFor="let i of IMAGES_RPM let idx =index">
+                        <ion-icon name="close" (click)="removeimage(idx,2)"
+                                  style="position: absolute;color: white;background-color: gray;border-radius: 50%;padding: 3px;font-size: 10px;height: 15px;width: 15px;top: 0px;"></ion-icon>
+                        <img [src]="i.image" style="width: 50px;height: 70px;">
+                    </ion-col>
+                    <ion-col [size]="3" style="text-align: center;margin: auto 0px;">
+                        <img src="/assets/plus.png" style="width: 30px;" (click)="presentActionSheet(2)">
+                    </ion-col>
+                </ion-row>
+            </div>
+            <hr style="background-color: lightgray">
+        </div>
+        <!-- <div class="biiling_adddress_box" style="margin: 0px;padding: 0px;"
+             *ngIf="ID == '5'|| ID == '6' || ID == '7' || ID == '8' || ID == '9' || ID == '10' || ID == '11' || ID == '12' || ID == '13' || ID == '14' || ID == '15' || ID == '20' || ID == '25' || ID == '26'  || ID == '31' || ID == '32' || ID == '33' || ID == '37'">
+            <ion-row style="margin: 0px 10px">
+                <ion-col size="10">
+                    <div>
+                        <p style="font-size: 16px;padding: 10px 0px;line-height: normal;">
+                            {{'C.R.box inside image'}}<span style="color: red">*</span></p>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <div class="shop_imga_plus">
+                <ion-row>
+                    <ion-col [size]="3" style="text-align: center" *ngFor="let i of IMAGES_CRBOX let idx =index">
+                        <ion-icon name="close" (click)="removeimage(idx,3)"
+                                  style="position: absolute;color: white;background-color: gray;border-radius: 50%;padding: 3px;font-size: 10px;height: 15px;width: 15px;top: 0px;"></ion-icon>
+                        <img [src]="i.image" style="width: 50px;height: 70px;">
+                    </ion-col>
+                    <ion-col [size]="3" style="text-align: center;margin: auto 0px;">
+                        <img src="/assets/plus.png" style="width: 30px;" (click)="presentActionSheet(3)">
+                    </ion-col>
+                </ion-row>
+            </div>
+            <hr style="background-color: lightgray">
+        </div> -->
+        <!-- <div class="biiling_adddress_box" style="margin: 0px;padding: 0px;"
+             *ngIf="ID == '5'|| ID == '6' || ID == '7' || ID == '8' || ID == '9' || ID == '10' || ID == '11' || ID == '12' || ID == '13' || ID == '14' || ID == '15' || ID == '20' || ID == '25' || ID == '26'  || ID == '31' || ID == '32' || ID == '33' || ID == '37'">
+            <ion-row style="margin: 0px 10px">
+                <ion-col size="10">
+                    <div>
+                        <p style="font-size: 16px;padding: 10px 0px;line-height: normal;">
+                            {{'Ready C.R Box images'}}<span style="color: red">*</span></p>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <div class="shop_imga_plus">
+                <ion-row>
+                    <ion-col [size]="3" style="text-align: center" *ngFor="let i of IMAGES_READY_CRBOX let idx =index">
+                        <ion-icon name="close" (click)="removeimage(idx,4)"
+                                  style="position: absolute;color: white;background-color: gray;border-radius: 50%;padding: 3px;font-size: 10px;height: 15px;width: 15px;top: 0px;"></ion-icon>
+                        <img [src]="i.image" style="width: 50px;height: 70px;">
+                    </ion-col>
+                    <ion-col [size]="3" style="text-align: center;margin: auto 0px;">
+                        <img src="/assets/plus.png" style="width: 30px;" (click)="presentActionSheet(4)">
+                    </ion-col>
+                </ion-row>
+            </div>
+            <hr style="background-color: lightgray">
+        </div> -->
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-button [disabled]="IS_SUBMIT" [size]="'full'" style="margin: 0px;" (click)="SAVE_DATA()">Save</ion-button>
+</ion-footer>
